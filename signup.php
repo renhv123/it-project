@@ -1,12 +1,6 @@
 <?php
-// Database configuration
-$servername = "192.168.1.10";
-$username = "Administrator";
-$password = "Secret55";
-$dbname = "user_registration";
-
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli('192.168.1.10', 'Administrator', 'Secret55', 'user_registration');
 
 // Check connection
 if ($conn->connect_error) {

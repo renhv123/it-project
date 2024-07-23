@@ -14,17 +14,17 @@ if ($conn->connect_error) {
 }
 
 // Get form data
-$signup_username = mysqli_real_escape_string($conn, $_POST['signup_username']);
-$signup_password = password_hash($_POST['signup_password'], PASSWORD_BCRYPT);
-$signup_email = mysqli_real_escape_string($conn, $_POST['signup_email']);
-$signup_address = mysqli_real_escape_string($conn, $_POST['signup_address']);
-$signup_zipcode = mysqli_real_escape_string($conn, $_POST['signup_zipcode']);
+$signup_username = $_POST['signup_username'];
+$signup_password = ($_POST['signup_password'], PASSWORD_BCRYPT);
+$signup_email = $_POST['signup_email'];
+$signup_address = $_POST['signup_address'];
+$signup_zipcode =  $_POST['signup_zipcode'];
 
 // Insert data into database
 $sql = "INSERT INTO users (username, password, email, address, zipcode) VALUES ('$signup_username', '$signup_password', '$signup_email', '$signup_address', '$signup_zipcode')";
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: success.html"); // Redirect to success page
+    echo "registration successful"; // Redirect to success page
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

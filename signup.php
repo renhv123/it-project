@@ -1,9 +1,9 @@
 <?php
 // Database connection parameters
-$servername = "your_windows_server_ip";
-$username = "your_username";
-$password = "your_password";
-$dbname = "your_database";
+$servername = "192.168.1.10";
+$username = "Administrator";
+$password = "Secret55";
+$dbname = "user_registration";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
